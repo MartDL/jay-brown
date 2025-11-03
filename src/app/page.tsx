@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Logo from "@/components/Logo";
+import Link from "next/link";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,30 +18,30 @@ export default function Home() {
 
           {/* Desktop menu */}
           <nav className="hidden md:flex space-x-8 text-sm font-medium">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="text-accent-dark hover:text-accent transition-colors duration-200"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/gallery"
               className="text-accent-dark hover:text-accent transition-colors duration-200"
             >
               Gallery
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/contact"
               className="text-accent-dark hover:text-accent transition-colors duration-200"
             >
               Contact
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/reviews"
               className="text-accent-dark hover:text-accent transition-colors duration-200"
             >
               Reviews
-            </a>
+            </Link>
           </nav>
 
           {/* Hamburger */}
@@ -81,24 +82,40 @@ export default function Home() {
         >
           <ul className="flex flex-col items-center gap-4 py-6 text-sm font-medium">
             <li>
-              <a href="#" className="hover:text-accent transition-colors">
+              <Link
+                href="/"
+                className="hover:text-accent transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-accent transition-colors">
+              <Link
+                href="/gallery"
+                className="hover:text-accent transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
                 Gallery
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-accent transition-colors">
+              <Link
+                href="/contact"
+                className="hover:text-accent transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
                 Contact
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-accent transition-colors">
+              <Link
+                href="/reviews"
+                className="hover:text-accent transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
                 Reviews
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -131,18 +148,18 @@ export default function Home() {
             handmade in Leicester with care, precision, and pride.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="bg-accent text-background px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-accent-dark transition-all duration-300"
             >
               Get a Free Quote
-            </a>
-            <a
-              href="#gallery"
+            </Link>
+            <Link
+              href="/gallery"
               className="border border-background/70 text-background px-8 py-3 rounded-lg text-lg font-semibold hover:bg-background/10 transition-all duration-300"
             >
               View Our Work
-            </a>
+            </Link>
           </div>
         </div>
       </section>
