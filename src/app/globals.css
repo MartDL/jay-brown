@@ -23,7 +23,7 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #121212;
     --foreground: #f0f0f0;
@@ -32,7 +32,7 @@
     --muted: #b3b3b3;
     --card-bg: #1f1f1f;
   }
-}
+} */
 
 /* Global styles */
 body {
