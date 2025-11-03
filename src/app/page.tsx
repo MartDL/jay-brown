@@ -1,65 +1,245 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <main className="relative min-h-screen bg-background text-foreground">
+      {/* Header */}
+      <header className="fixed top-0 left-0 w-full bg-background/90 backdrop-blur-sm border-b border-foreground/10 shadow-sm z-50">
+        <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
+          <h1 className="text-xl font-bold text-accent">Jay Brown Carpentry</h1>
+
+          {/* Desktop menu */}
+          <nav className="hidden md:flex space-x-8 text-sm font-medium">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#"
+              className="text-accent-dark hover:text-accent transition-colors duration-200"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Home
+            </a>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#"
+              className="text-accent-dark hover:text-accent transition-colors duration-200"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+              Gallery
+            </a>
+            <a
+              href="#"
+              className="text-accent-dark hover:text-accent transition-colors duration-200"
+            >
+              Contact
+            </a>
+            <a
+              href="#"
+              className="text-accent-dark hover:text-accent transition-colors duration-200"
+            >
+              Reviews
+            </a>
+          </nav>
+
+          {/* Hamburger */}
+          <button
+            className="flex flex-col justify-between w-8 h-6 md:hidden group"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+            <span
+              className={`h-1 w-full rounded transition-all duration-300 ${
+                isOpen
+                  ? "rotate-45 translate-y-2 bg-accent-dark"
+                  : "bg-accent group-hover:bg-accent-dark"
+              }`}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <span
+              className={`h-1 w-full rounded transition-all duration-300 ${
+                isOpen
+                  ? "opacity-0"
+                  : "bg-accent group-hover:bg-accent-dark opacity-100"
+              }`}
+            />
+            <span
+              className={`h-1 w-full rounded transition-all duration-300 ${
+                isOpen
+                  ? "-rotate-45 -translate-y-2 bg-accent-dark"
+                  : "bg-accent group-hover:bg-accent-dark"
+              }`}
+            />
+          </button>
         </div>
-      </main>
-    </div>
+
+        {/* Top dropdown overlay */}
+        <div
+          className={`absolute left-0 w-full bg-background/95 backdrop-blur-sm shadow-md transition-all duration-300 ease-in-out overflow-hidden ${
+            isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <ul className="flex flex-col items-center gap-4 py-6 text-sm font-medium">
+            <li>
+              <a href="#" className="hover:text-accent transition-colors">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-accent transition-colors">
+                Gallery
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-accent transition-colors">
+                Contact
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-accent transition-colors">
+                Reviews
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-start pt-28 pb-16 px-4 text-center bg-gradient-to-b from-background via-[#f9f5f0] to-[#f3eee8]">
+        <h2 className="text-4xl font-extrabold text-accent drop-shadow-sm">
+          Jay Brown Carpentry
+        </h2>
+        <p className="mt-3 text-lg text-muted max-w-2xl">
+          Crafting bespoke furniture, kitchens, and interiors with precision and
+          passion. Built to last, designed to inspire.
+        </p>
+      </section>
+
+      {/* Showcase Section */}
+      <section className="mt-8 space-y-16">
+        {/* Item 1 */}
+        <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4">
+          <div className="flex-1">
+            <Image
+              src="/carp-1.jpg"
+              alt="Handcrafted carpentry example"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <h3 className="text-2xl font-semibold text-accent-dark mb-2">
+              Exceptional Quality
+            </h3>
+            <p className="text-muted leading-relaxed">
+              Every piece is carefully handcrafted with attention to the
+              smallest detail — delivering finishes that stand the test of time.
+              Precision and passion define every project we take on.
+            </p>
+          </div>
+        </div>
+
+        {/* Item 2 */}
+        <div className="card flex flex-col md:flex-row-reverse items-center gap-8 max-w-6xl mx-auto px-4">
+          <div className="flex-1">
+            <Image
+              src="/carp-2.jpg"
+              alt="Woodwork detail"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <h3 className="text-2xl font-semibold text-accent-dark mb-2">
+              Trusted Craftsmanship
+            </h3>
+            <p className="text-muted leading-relaxed">
+              With years of experience, our carpentry work has earned the trust
+              of homeowners and builders alike — from bespoke interiors to
+              complete home renovations.
+            </p>
+          </div>
+        </div>
+
+        {/* Item 3 */}
+        <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4 pb-20">
+          <div className="flex-1">
+            <Image
+              src="/carp-3.jpg"
+              alt="Bespoke carpentry project"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg object-cover"
+            />
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <h3 className="text-2xl font-semibold text-accent-dark mb-2">
+              Built to Last
+            </h3>
+            <p className="text-muted leading-relaxed">
+              We use premium hardwoods, sustainable materials, and time-tested
+              joinery methods to ensure every piece we create is not only
+              beautiful but durable for generations.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="bg-background py-20 px-4 border-t border-foreground/10">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-3xl font-bold text-heading mb-10">
+            What Our Customers Say
+          </h3>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* Testimonial 1 */}
+            <div className="bg-card-bg shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
+              <p className="text-muted italic">
+                “Jay did an incredible job on our new oak staircase — every
+                detail is perfect. We’ll definitely be using him again for our
+                kitchen!”
+              </p>
+              <div className="mt-4">
+                <p className="font-semibold text-accent-dark">Sarah M.</p>
+                <p className="text-sm text-muted">Leicester</p>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-card-bg shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
+              <p className="text-muted italic">
+                “Professional, reliable and excellent craftsmanship. My fitted
+                wardrobes look amazing — better than I imagined.”
+              </p>
+              <div className="mt-4">
+                <p className="font-semibold text-accent-dark">Tom W.</p>
+                <p className="text-sm text-muted">Lutterworth</p>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-card-bg shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
+              <p className="text-muted italic">
+                “From the first consultation to the final finish, Jay’s work was
+                top-notch. Highly recommend for anyone needing bespoke
+                carpentry.”
+              </p>
+              <div className="mt-4">
+                <p className="font-semibold text-accent-dark">Emma L.</p>
+                <p className="text-sm text-muted">Market Harborough</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-accent-dark text-background py-8 mt-16 text-center">
+        <p className="font-medium">
+          © {new Date().getFullYear()} Jay Brown Carpentry
+        </p>
+        <p className="text-background/80 text-sm mt-1">
+          Handcrafted with care in every detail.
+        </p>
+      </footer>
+    </main>
   );
 }
