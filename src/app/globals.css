@@ -18,8 +18,8 @@
   --color-accent-dark: var(--accent-dark);
   --color-muted: var(--muted);
   --color-card-bg: var(--card-bg);
-  --font-sans: var(--font-geist-sans),
-  --color-honey: #e3b37a system-ui, sans-serif;
+  --color-honey: #e3b37a;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 /* Dark mode */
