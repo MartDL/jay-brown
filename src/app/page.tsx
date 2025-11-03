@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Logo from "@/components/Logo";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,9 @@ export default function Home() {
       {/* Header */}
       <header className="fixed top-0 left-0 w-full bg-background/90 backdrop-blur-sm border-b border-foreground/10 shadow-sm z-50">
         <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
-          <h1 className="text-xl font-bold text-accent">Jay Brown Carpentry</h1>
+          <div className="flex items-center gap-2">
+            <Logo size={20} /> {/* Adjust size if needed */}
+          </div>
 
           {/* Desktop menu */}
           <nav className="hidden md:flex space-x-8 text-sm font-medium">
@@ -102,16 +105,47 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-start pt-28 pb-16 px-4 text-center bg-gradient-to-b from-background via-[#f9f5f0] to-[#f3eee8]">
-        <h2 className="text-4xl font-extrabold text-accent drop-shadow-sm">
-          Jay Brown Carpentry
-        </h2>
-        <p className="mt-3 text-lg text-muted max-w-2xl">
-          Crafting bespoke furniture, kitchens, and interiors with precision and
-          passion. Built to last, designed to inspire.
-        </p>
-      </section>
+      <section className="relative flex flex-col items-center justify-center text-center min-h-[80vh] overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero-woodgrain.jpg" // Replace with a high-quality wood, joinery, or workshop image
+            alt="Jay Brown Carpentry workshop background"
+            fill
+            priority
+            className="object-cover brightness-[0.75] saturate-[1.1]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/70" />
+        </div>
 
+        {/* Content */}
+        <div className="relative z-10 px-6 py-20 text-background max-w-3xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-accent mb-2 tracking-wide">
+            Jay Brown Carpentry
+          </h1>
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+            Handcrafted Woodwork, Built to Last
+          </h2>
+          <p className="text-lg md:text-xl text-background/90 leading-relaxed max-w-2xl mx-auto mb-10">
+            Beautifully crafted kitchens, interiors, and bespoke furniture —
+            handmade in Leicester with care, precision, and pride.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#contact"
+              className="bg-accent text-background px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-accent-dark transition-all duration-300"
+            >
+              Get a Free Quote
+            </a>
+            <a
+              href="#gallery"
+              className="border border-background/70 text-background px-8 py-3 rounded-lg text-lg font-semibold hover:bg-background/10 transition-all duration-300"
+            >
+              View Our Work
+            </a>
+          </div>
+        </div>
+      </section>
       {/* Showcase Section */}
       <section className="mt-8 space-y-16">
         {/* Item 1 */}
