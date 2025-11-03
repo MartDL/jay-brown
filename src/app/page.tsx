@@ -109,7 +109,7 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/hero-woodgrain.jpg" // Replace with a high-quality wood, joinery, or workshop image
+            src="/carp-4.jpg" // Replace with a high-quality wood, joinery, or workshop image
             alt="Jay Brown Carpentry workshop background"
             fill
             priority
