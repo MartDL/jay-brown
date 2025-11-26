@@ -27,7 +27,7 @@ export default function Logo({ size = 48 }: { size?: number }) {
         fontSize="24"
         fill="#8a5322"
       >
-        Jay Brown
+        JB
       </text>
       <text
         x="85"
@@ -37,7 +37,7 @@ export default function Logo({ size = 48 }: { size?: number }) {
         fontSize="22"
         fill="#8a5322"
       >
-        Carpentry
+        Shopfitting
       </text>
     </svg>
   );

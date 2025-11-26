@@ -131,7 +131,7 @@ export default function Home() {
             priority
             className="object-cover brightness-[0.75] saturate-[1.1]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/40 to-black/70" />
         </div>
 
         {/* Hero Content */}

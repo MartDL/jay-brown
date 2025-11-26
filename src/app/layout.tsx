@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jay Brown Carpentry",
+  title: "JB Shopfitting",
   description:
-    "Beautiful handcrafted woodwork and bespoke carpentry in Leicester.",
+    "Professional shopfitting services delivering high-quality bespoke interiors, displays, and commercial installations across Leicester.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground`}
       >
-        <Header /> {/* ✅ menu now appears on every page */}
+        <Header />
         <main className="pt-20">{children}</main>
       </body>
     </html>
