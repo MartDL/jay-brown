@@ -13,7 +13,7 @@ export default function Home() {
       <header className="fixed top-0 left-0 w-full bg-background/90 backdrop-blur-sm border-b border-foreground/10 shadow-sm z-50">
         <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
           <div className="flex items-center gap-2">
-            <Logo size={20} /> {/* Adjust size if needed */}
+            <Logo size={20} />
           </div>
 
           {/* Desktop menu */}
@@ -74,7 +74,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Top dropdown overlay */}
+        {/* Mobile dropdown */}
         <div
           className={`absolute left-0 w-full bg-background/95 backdrop-blur-sm shadow-md transition-all duration-300 ease-in-out overflow-hidden ${
             isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
@@ -123,11 +123,10 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center text-center min-h-[80vh] overflow-hidden">
-        {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/carp-4.jpg" // Replace with a high-quality wood, joinery, or workshop image
-            alt="Jay Brown Carpentry workshop background"
+            src="/carp-4.jpg"
+            alt="Commercial shopfitting and construction"
             fill
             priority
             className="object-cover brightness-[0.75] saturate-[1.1]"
@@ -135,24 +134,25 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/70" />
         </div>
 
-        {/* Content */}
+        {/* Hero Content */}
         <div className="relative z-10 px-6 py-20 text-background max-w-3xl">
           <h1 className="text-3xl md:text-4xl font-bold text-accent mb-2 tracking-wide">
-            Jay Brown Carpentry
+            JB Shopfitting & Construction
           </h1>
           <h2 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-            Handcrafted Woodwork, Built to Last
+            Transforming Retail & Commercial Spaces
           </h2>
           <p className="text-lg md:text-xl text-background/90 leading-relaxed max-w-2xl mx-auto mb-10">
-            Beautifully crafted kitchens, interiors, and bespoke furniture —
-            handmade in Leicester with care, precision, and pride.
+            Specialists in bespoke shopfitting, commercial interiors, and
+            construction — delivering precision, reliability, and a finish that
+            reflects your brand’s quality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-accent text-background px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-accent-dark transition-all duration-300"
             >
-              Get a Free Quote
+              Request a Consultation
             </Link>
             <Link
               href="/gallery"
@@ -163,14 +163,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Showcase Section */}
+
+      {/* Services / Showcase */}
       <section className="mt-8 space-y-16">
-        {/* Item 1 */}
+        {/* Section 1 */}
         <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4">
           <div className="flex-1">
             <Image
               src="/carp-1.jpg"
-              alt="Handcrafted carpentry example"
+              alt="Retail shopfitting example"
               width={600}
               height={400}
               className="rounded-xl shadow-lg object-cover"
@@ -178,22 +179,23 @@ export default function Home() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-2xl font-semibold text-accent-dark mb-2">
-              Exceptional Quality
+              Precision Retail Fit-Outs
             </h3>
             <p className="text-muted leading-relaxed">
-              Every piece is carefully handcrafted with attention to the
-              smallest detail — delivering finishes that stand the test of time.
-              Precision and passion define every project we take on.
+              From boutique stores to large retail chains, we deliver
+              high-quality fit-outs designed to impress customers and withstand
+              everyday use. Our team manages every detail from start to finish —
+              on time and within budget.
             </p>
           </div>
         </div>
 
-        {/* Item 2 */}
+        {/* Section 2 */}
         <div className="card flex flex-col md:flex-row-reverse items-center gap-8 max-w-6xl mx-auto px-4">
           <div className="flex-1">
             <Image
               src="/carp-2.jpg"
-              alt="Woodwork detail"
+              alt="Commercial interior joinery"
               width={600}
               height={400}
               className="rounded-xl shadow-lg object-cover"
@@ -201,22 +203,23 @@ export default function Home() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-2xl font-semibold text-accent-dark mb-2">
-              Trusted Craftsmanship
+              Commercial Interiors & Joinery
             </h3>
             <p className="text-muted leading-relaxed">
-              With years of experience, our carpentry work has earned the trust
-              of homeowners and builders alike — from bespoke interiors to
-              complete home renovations.
+              We craft and install bespoke joinery, counters, and display units
+              tailored to your brand identity. Our interiors combine modern
+              design with durable materials for a professional and welcoming
+              customer experience.
             </p>
           </div>
         </div>
 
-        {/* Item 3 */}
+        {/* Section 3 */}
         <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4 pb-20">
           <div className="flex-1">
             <Image
               src="/carp-3.jpg"
-              alt="Bespoke carpentry project"
+              alt="Construction and refurbishment project"
               width={600}
               height={400}
               className="rounded-xl shadow-lg object-cover"
@@ -224,16 +227,18 @@ export default function Home() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-2xl font-semibold text-accent-dark mb-2">
-              Built to Last
+              Construction & Refurbishment
             </h3>
             <p className="text-muted leading-relaxed">
-              We use premium hardwoods, sustainable materials, and time-tested
-              joinery methods to ensure every piece we create is not only
-              beautiful but durable for generations.
+              Whether it’s a full commercial build, structural refurbishment, or
+              an interior transformation, we bring together skilled trades and
+              meticulous project management to deliver dependable results.
             </p>
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
       <section className="bg-background py-20 px-4 border-t border-foreground/10">
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-3xl font-bold text-heading mb-10">
@@ -241,12 +246,11 @@ export default function Home() {
           </h3>
 
           <div className="grid gap-8 md:grid-cols-3">
-            {/* Testimonial 1 */}
             <div className="bg-card-bg shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
               <p className="text-muted italic">
-                “Jay did an incredible job on our new oak staircase — every
-                detail is perfect. We’ll definitely be using him again for our
-                kitchen!”
+                “JB Shopfitting completely transformed our retail space —
+                professional from start to finish. The workmanship and attention
+                to detail are outstanding.”
               </p>
               <div className="mt-4">
                 <p className="font-semibold text-accent-dark">Sarah M.</p>
@@ -254,11 +258,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Testimonial 2 */}
             <div className="bg-card-bg shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
               <p className="text-muted italic">
-                “Professional, reliable and excellent craftsmanship. My fitted
-                wardrobes look amazing — better than I imagined.”
+                “Reliable, skilled, and efficient. The JB team fitted out our
+                café beautifully and managed everything seamlessly — highly
+                recommended.”
               </p>
               <div className="mt-4">
                 <p className="font-semibold text-accent-dark">Tom W.</p>
@@ -266,12 +270,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Testimonial 3 */}
             <div className="bg-card-bg shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
               <p className="text-muted italic">
-                “From the first consultation to the final finish, Jay’s work was
-                top-notch. Highly recommend for anyone needing bespoke
-                carpentry.”
+                “Outstanding results on our office refurbishment. Great
+                communication throughout and delivered exactly as promised.”
               </p>
               <div className="mt-4">
                 <p className="font-semibold text-accent-dark">Emma L.</p>
@@ -285,10 +287,10 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-accent-dark text-background py-8 mt-16 text-center">
         <p className="font-medium">
-          © {new Date().getFullYear()} Jay Brown Carpentry
+          © {new Date().getFullYear()} JB Shopfitting & Construction
         </p>
         <p className="text-background/80 text-sm mt-1">
-          Handcrafted with care in every detail.
+          Delivering precision, quality, and craftsmanship across every project.
         </p>
       </footer>
     </main>
