@@ -2,11 +2,14 @@
 
 /* Base palette (light theme) */
 :root {
-  --background: #fdfaf6; /* warm off-white */
-  --foreground: #1a1a1a;
-  --accent: #c87b31; /* warm carpentry orange-brown */
-  --accent-dark: #8a5322;
-  --muted: #5a5a5a;
+  --background: #ffffff; /* clean white */
+  --foreground: #262626; /* charcoal from logo outline */
+
+  /* Logo colours */
+  --accent: #630f13; /* deep maroon (primary brand colour) */
+  --accent-dark: #520c10; /* darker maroon tone for hover states */
+
+  --muted: #6b6b6b; /* neutral grey for body text */
   --card-bg: #ffffff;
 }
 
@@ -18,21 +21,12 @@
   --color-accent-dark: var(--accent-dark);
   --color-muted: var(--muted);
   --color-card-bg: var(--card-bg);
-  --color-honey: #e3b37a;
+
+  /* Optional highlight colour (lighter maroon) */
+  --color-highlight: #7a191b;
+
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
 }
-
-/* Dark mode */
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #121212;
-    --foreground: #f0f0f0;
-    --accent: #d98e45;
-    --accent-dark: #a66b2e;
-    --muted: #b3b3b3;
-    --card-bg: #1f1f1f;
-  }
-} */
 
 /* Global styles */
 body {
@@ -40,7 +34,7 @@ body {
   min-height: 100vh;
 }
 
-/* Optional card + hover tone */
+/* Optional card styling */
 .card {
   @apply bg-card-bg rounded-xl shadow-md transition-shadow duration-300 hover:shadow-lg;
 }

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Logo from "@/components/Logo";
 import Link from "next/link";
+import LogoWithName from "@/components/LogoWithName";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ export default function Home() {
       <header className="fixed top-0 left-0 w-full bg-background/90 backdrop-blur-sm border-b border-foreground/10 shadow-sm z-50">
         <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
           <div className="flex items-center gap-2">
-            <Logo size={20} />
+            <Logo size={36} />
           </div>
 
           {/* Desktop menu */}
@@ -81,97 +82,84 @@ export default function Home() {
           }`}
         >
           <ul className="flex flex-col items-center gap-4 py-6 text-sm font-medium">
-            <li>
-              <Link
-                href="/"
-                className="hover:text-accent transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/gallery"
-                className="hover:text-accent transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Gallery
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="hover:text-accent transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/reviews"
-                className="hover:text-accent transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Reviews
-              </Link>
-            </li>
+            {["Home", "Gallery", "Contact", "Reviews"].map((label, i) => (
+              <li key={label}>
+                <Link
+                  href={["/", "/gallery", "/contact", "/reviews"][i]}
+                  className="hover:text-accent transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </header>
-
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center min-h-[80vh] overflow-hidden">
+      <section className="relative min-h-[80vh] flex flex-col justify-center overflow-hidden pt-16 sm:pt-20">
+        {/* Background */}
         <div className="absolute inset-0">
           <Image
             src="/carp-4.jpg"
-            alt="Commercial shopfitting and construction"
+            alt="JB Shopfitting and Construction"
             fill
             priority
             className="object-cover brightness-[0.75] saturate-[1.1]"
           />
-          <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/55 to-black/80" />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 px-6 py-20 text-background max-w-3xl">
-          <h1 className="text-3xl md:text-4xl font-bold text-accent mb-2 tracking-wide">
-            JB Shopfitting & Construction
-          </h1>
+        {/* Full-width brand masthead */}
+        <div className="relative z-10 w-full bg-white/96 backdrop-blur-md border-b border-black/10 shadow-sm">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-row items-center justify-center gap-3 sm:gap-6">
+            <LogoWithName size={72} />
+
+            <h1 className="min-w-0 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-accent leading-tight text-left wrap-break-word">
+              JB Shopfitting{" "}
+              <span className="text-accent-dark">& Construction</span>
+            </h1>
+          </div>
+        </div>
+
+        {/* Hero content */}
+        <div className="relative z-10 px-6 py-16 text-background max-w-3xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-            Transforming Retail & Commercial Spaces
+            Transforming Retail, Office & Commercial Spaces
           </h2>
+
           <p className="text-lg md:text-xl text-background/90 leading-relaxed max-w-2xl mx-auto mb-10">
-            Specialists in bespoke shopfitting, commercial interiors, and
-            construction — delivering precision, reliability, and a finish that
-            reflects your brand’s quality.
+            With over 25 years of experience in construction and shopfitting, we
+            specialise in full office fit outs, bespoke joinery, commercial
+            renovations, and complete interior transformations. Every project is
+            delivered with precision, efficiency, modern materials, and a finish
+            built to last.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-accent text-background px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-accent-dark transition-all duration-300"
+              className="bg-accent text-background px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-accent-dark transition-all"
             >
               Request a Consultation
             </Link>
             <Link
               href="/gallery"
-              className="border border-background/70 text-background px-8 py-3 rounded-lg text-lg font-semibold hover:bg-background/10 transition-all duration-300"
+              className="border border-background/70 text-background px-8 py-3 rounded-lg text-lg font-semibold hover:bg-background/10 transition-all"
             >
               View Our Work
             </Link>
           </div>
         </div>
       </section>
-
-      {/* Services / Showcase */}
+      {/* Services */}
       <section className="mt-8 space-y-16">
-        {/* Section 1 */}
+        {/* Office Fit Outs */}
         <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4">
           <div className="flex-1">
             <Image
               src="/carp-1.jpg"
-              alt="Retail shopfitting example"
+              alt="Office fit outs"
               width={600}
               height={400}
               className="rounded-xl shadow-lg object-cover"
@@ -179,23 +167,23 @@ export default function Home() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-2xl font-semibold text-accent-dark mb-2">
-              Precision Retail Fit-Outs
+              Full Office Fit Outs
             </h3>
             <p className="text-muted leading-relaxed">
-              From boutique stores to large retail chains, we deliver
-              high-quality fit-outs designed to impress customers and withstand
-              everyday use. Our team manages every detail from start to finish —
-              on time and within budget.
+              Including plasterboard partitions, fire-rated partitions, glass
+              partitions, bespoke desk dividers, office segregation solutions,
+              and suspended ceilings. Designed to create modern, functional,
+              safe working environments.
             </p>
           </div>
         </div>
 
-        {/* Section 2 */}
+        {/* Joinery */}
         <div className="card flex flex-col md:flex-row-reverse items-center gap-8 max-w-6xl mx-auto px-4">
           <div className="flex-1">
             <Image
               src="/carp-2.jpg"
-              alt="Commercial interior joinery"
+              alt="Joinery services"
               width={600}
               height={400}
               className="rounded-xl shadow-lg object-cover"
@@ -203,23 +191,23 @@ export default function Home() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-2xl font-semibold text-accent-dark mb-2">
-              Commercial Interiors & Joinery
+              Bespoke Joinery & Commercial Installations
             </h3>
             <p className="text-muted leading-relaxed">
-              We craft and install bespoke joinery, counters, and display units
-              tailored to your brand identity. Our interiors combine modern
-              design with durable materials for a professional and welcoming
-              customer experience.
+              Kitchens, bespoke counters, bars, desks, wall panelling, hygienic
+              commercial-grade PVC cladding, fire doors and frames, skirting,
+              architrave, trims, and decorative paneling — all crafted with
+              precision and long-lasting materials.
             </p>
           </div>
         </div>
 
-        {/* Section 3 */}
+        {/* Construction & Renovation */}
         <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4 pb-20">
           <div className="flex-1">
             <Image
               src="/carp-3.jpg"
-              alt="Construction and refurbishment project"
+              alt="Construction and renovation"
               width={600}
               height={400}
               className="rounded-xl shadow-lg object-cover"
@@ -227,63 +215,53 @@ export default function Home() {
           </div>
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-2xl font-semibold text-accent-dark mb-2">
-              Construction & Refurbishment
+              Commercial Renovation & Specialist Works
             </h3>
             <p className="text-muted leading-relaxed">
-              Whether it’s a full commercial build, structural refurbishment, or
-              an interior transformation, we bring together skilled trades and
-              meticulous project management to deliver dependable results.
+              Including aluminium chequer plate protection, impact-resistant PVC
+              panelling, concrete plinth bases and repairs, steel security
+              doors, epoxy floor coatings, and bund coatings. Ideal for
+              commercial, manufacturing, and sterile environments.
             </p>
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
+      {/* Why Choose Us */}
       <section className="bg-background py-20 px-4 border-t border-foreground/10">
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-3xl font-bold text-heading mb-10">
-            What Our Customers Say
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-3xl font-bold text-heading mb-6">
+            Over 25 Years of Experience
           </h3>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="bg-card-bg shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
-              <p className="text-muted italic">
-                “JB Shopfitting completely transformed our retail space —
-                professional from start to finish. The workmanship and attention
-                to detail are outstanding.”
-              </p>
-              <div className="mt-4">
-                <p className="font-semibold text-accent-dark">Sarah M.</p>
-                <p className="text-sm text-muted">Leicester</p>
-              </div>
-            </div>
+          <p className="text-muted leading-relaxed text-lg">
+            We pride ourselves on delivering a wide scope of construction and
+            shopfitting services — from office fit outs to full commercial
+            renovation projects. We work closely with customers to design and
+            build modern, usable spaces using the latest materials and ideas.
+            <br />
+            <br />
+            Our experience ensures competitive pricing with no compromise on
+            quality or finish. All projects are executed with precision,
+            practical planning, and forward thinking to make the entire
+            experience smooth, efficient, and stress free.
+            <br />
+            <br />
+            Safety is paramount. All staff are fully trained and competent, and
+            every project includes risk assessments, planning, and management to
+            safeguard both teams and customers.
+            <br />
+            <br />
+            We have extensive experience working in aerospace engineering
+            environments, understanding the need for speed, precision,
+            cleanliness, and minimal disruption.
+          </p>
 
-            <div className="bg-card-bg shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
-              <p className="text-muted italic">
-                “Reliable, skilled, and efficient. The JB team fitted out our
-                café beautifully and managed everything seamlessly — highly
-                recommended.”
-              </p>
-              <div className="mt-4">
-                <p className="font-semibold text-accent-dark">Tom W.</p>
-                <p className="text-sm text-muted">Lutterworth</p>
-              </div>
-            </div>
-
-            <div className="bg-card-bg shadow-md rounded-xl p-6 flex flex-col items-center text-center transition-shadow hover:shadow-lg">
-              <p className="text-muted italic">
-                “Outstanding results on our office refurbishment. Great
-                communication throughout and delivered exactly as promised.”
-              </p>
-              <div className="mt-4">
-                <p className="font-semibold text-accent-dark">Emma L.</p>
-                <p className="text-sm text-muted">Market Harborough</p>
-              </div>
-            </div>
-          </div>
+          <p className="text-accent-dark mt-8 text-lg font-semibold">
+            Contact us for a free, friendly consultation and quotation — we look
+            forward to working with you.
+          </p>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-accent-dark text-background py-8 mt-16 text-center">
         <p className="font-medium">

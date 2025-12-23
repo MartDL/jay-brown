@@ -12,7 +12,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <Logo size={20} />
+          <Logo size={36} />
         </div>
 
         {/* Desktop menu */}
