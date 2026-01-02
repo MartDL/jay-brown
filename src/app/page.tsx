@@ -98,7 +98,6 @@ export default function Home() {
       </header>
       {/* Hero Section */}
       <section className="relative min-h-[55vh] flex flex-col justify-center overflow-hidden pt-20">
-        {/* Background */}
         <div className="absolute inset-0">
           <Image
             src="/carp-4.jpg"
