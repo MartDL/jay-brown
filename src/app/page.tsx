@@ -14,7 +14,7 @@ export default function Home() {
       <header className="fixed top-0 left-0 w-full bg-background/90 backdrop-blur-sm border-b border-foreground/10 shadow-sm z-50">
         <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
           <div className="flex items-center gap-2">
-            <Logo size={36} />
+            <LogoWithName size={64} />
           </div>
 
           {/* Desktop menu */}
@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       </header>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex flex-col justify-center overflow-hidden pt-16 sm:pt-20">
+      <section className="relative min-h-[55vh] flex flex-col justify-center overflow-hidden pt-20">
         {/* Background */}
         <div className="absolute inset-0">
           <Image
@@ -108,18 +108,6 @@ export default function Home() {
             className="object-cover brightness-[0.75] saturate-[1.1]"
           />
           <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/55 to-black/80" />
-        </div>
-
-        {/* Full-width brand masthead */}
-        <div className="relative z-10 w-full bg-white/96 backdrop-blur-md border-b border-black/10 shadow-sm">
-          <div className="max-w-6xl mx-auto px-4 py-3 flex flex-row items-center justify-center gap-3 sm:gap-6">
-            <LogoWithName size={72} />
-
-            <h1 className="min-w-0 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-accent leading-tight text-left wrap-break-word">
-              JB Shopfitting{" "}
-              <span className="text-accent-dark">& Construction</span>
-            </h1>
-          </div>
         </div>
 
         {/* Hero content */}
@@ -158,7 +146,7 @@ export default function Home() {
         <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4">
           <div className="flex-1">
             <Image
-              src="/carp-1.jpg"
+              src="/IMG5.jpg"
               alt="Office fit outs"
               width={600}
               height={400}
@@ -182,7 +170,7 @@ export default function Home() {
         <div className="card flex flex-col md:flex-row-reverse items-center gap-8 max-w-6xl mx-auto px-4">
           <div className="flex-1">
             <Image
-              src="/carp-2.jpg"
+              src="/IMG8.jpg"
               alt="Joinery services"
               width={600}
               height={400}

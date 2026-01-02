@@ -5,16 +5,17 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
 const images = [
-  "/carp-1.jpg",
-  "/carp-2.jpg",
-  "/carp-3.jpg",
-  "/carp-4.jpg",
-  "/carp-5.jpg",
-  "/carp-6.jpg",
-  "/carp-7.jpg",
-  "/carp-8.jpg",
-  "/carp-9.jpg",
-  "/carp-10.jpg",
+  "/IMG1.JPG",
+  "/IMG2.JPG",
+  "/IMG3.JPG",
+  "/IMG4.JPG",
+  "/IMG5.JPG",
+  "/IMG6.JPG",
+  "/IMG7.JPG",
+  "/IMG8.JPG",
+  "/IMG9.jpeg",
+  "/IMG10.jpeg",
+  "/IMG11.Jpeg",
 ];
 
 export default function GalleryPage() {

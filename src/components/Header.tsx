@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Logo from "@/components/Logo";
 import Link from "next/link";
+import LogoWithName from "./LogoWithName";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function Header() {
       <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <Logo size={36} />
+          <LogoWithName size={64} />
         </div>
 
         {/* Desktop menu */}
