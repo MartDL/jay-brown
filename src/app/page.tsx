@@ -152,7 +152,7 @@ export default function Home() {
           <div className="flex-1">
             <div className="relative h-[240px] md:h-[350px] w-full">
               <Image
-                src="/IMG12.PNG"
+                src="/IMG12.png"
                 alt="Office fit outs"
                 fill
                 className="rounded-xl shadow-lg object-cover"

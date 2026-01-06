@@ -16,10 +16,10 @@ const images = [
   "/IMG9.jpeg",
   "/IMG10.jpeg",
   "/IMG11.Jpeg",
-  "/IMG12.PNG",
-  "/IMG13.PNG",
-  "/IMG14.PNG",
-  "/IMG15.PNG",
+  "/IMG12.png",
+  "/IMG13.png",
+  "/IMG14.png",
+  "/IMG15.png",
 ];
 
 export default function GalleryPage() {
