@@ -100,7 +100,7 @@ export default function Home() {
       <section className="relative min-h-[55vh] flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/carp-4.jpg"
+            src="/carp-4.JPG"
             alt="JB Shopfitting and Construction"
             fill
             priority
@@ -177,7 +177,7 @@ export default function Home() {
         <div className="card flex flex-col md:flex-row-reverse items-center gap-8 max-w-6xl mx-auto p-6">
           <div className="flex-1">
             <Image
-              src="/IMG8.jpg"
+              src="/IMG8.JPG"
               alt="Joinery services"
               width={600}
               height={400}
@@ -201,7 +201,7 @@ export default function Home() {
         <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto p-6 mb-4">
           <div className="flex-1">
             <Image
-              src="/IMG5.jpg"
+              src="/IMG5.JPG"
               alt="Construction and renovation"
               width={600}
               height={400}

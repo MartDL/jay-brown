@@ -5,14 +5,14 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
 const images = [
-  "/IMG1.jpg",
-  "/IMG2.jpg",
-  "/IMG3.jpg",
-  "/IMG4.jpg",
-  "/IMG5.jpg",
-  "/IMG6.jpg",
-  "/IMG7.jpg",
-  "/IMG8.jpg",
+  "/IMG1.JPG",
+  "/IMG2.JPG",
+  "/IMG3.JPG",
+  "/IMG4.JPG",
+  "/IMG5.JPG",
+  "/IMG6.JPG",
+  "/IMG7.JPG",
+  "/IMG8.JPG",
   "/IMG9.jpeg",
   "/IMG10.jpeg",
   "/IMG11.Jpeg",
@@ -39,7 +39,7 @@ export default function GalleryPage() {
       {/* Hero section */}
       <section className="relative h-[40vh] md:h-[50vh] flex items-center justify-center text-center overflow-hidden">
         <Image
-          src="/carp-4.jpg"
+          src="/carp-4.JPG"
           alt="Gallery background"
           fill
           className="object-cover brightness-[0.6] saturate-[1.1]"
