@@ -201,7 +201,7 @@ export default function Home() {
         <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto p-6 mb-4">
           <div className="flex-1">
             <Image
-              src="/IMG5.JPG"
+              src="/IMG5.jpg"
               alt="Construction and renovation"
               width={600}
               height={400}

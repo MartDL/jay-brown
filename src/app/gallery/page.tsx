@@ -5,14 +5,14 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 
 const images = [
-  "/IMG1.JPG",
-  "/IMG2.JPG",
-  "/IMG3.JPG",
-  "/IMG4.JPG",
-  "/IMG5.JPG",
-  "/IMG6.JPG",
-  "/IMG7.JPG",
-  "/IMG8.JPG",
+  "/IMG1.jpg",
+  "/IMG2.jpg",
+  "/IMG3.jpg",
+  "/IMG4.jpg",
+  "/IMG5.jpg",
+  "/IMG6.jpg",
+  "/IMG7.jpg",
+  "/IMG8.jpg",
   "/IMG9.jpeg",
   "/IMG10.jpeg",
   "/IMG11.Jpeg",
