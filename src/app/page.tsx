@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       </header>
       {/* Hero Section */}
-      <section className="relative min-h-[55vh] flex flex-col justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[55vh] flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/carp-4.jpg"
@@ -130,6 +130,12 @@ export default function Home() {
             >
               Request a Consultation
             </Link>
+            <a
+              href="tel:+447700900123"
+              className="inline-flex justify-center rounded-lg bg-accent px-6 py-3 text-background font-semibold hover:bg-accent-dark transition"
+            >
+              Call 07899 957 096
+            </a>
             <Link
               href="/gallery"
               className="border border-background/70 text-background px-8 py-3 rounded-lg text-lg font-semibold hover:bg-background/10 transition-all"
@@ -142,16 +148,18 @@ export default function Home() {
       {/* Services */}
       <section className="mt-8 space-y-16">
         {/* Office Fit Outs */}
-        <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4">
+        <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto p-6">
           <div className="flex-1">
-            <Image
-              src="/IMG5.jpg"
-              alt="Office fit outs"
-              width={600}
-              height={400}
-              className="rounded-xl shadow-lg object-cover"
-            />
+            <div className="relative h-[240px] md:h-[350px] w-full">
+              <Image
+                src="/IMG12.PNG"
+                alt="Office fit outs"
+                fill
+                className="rounded-xl shadow-lg object-cover"
+              />
+            </div>
           </div>
+
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-2xl font-semibold text-accent-dark mb-2">
               Full Office Fit Outs
@@ -166,7 +174,7 @@ export default function Home() {
         </div>
 
         {/* Joinery */}
-        <div className="card flex flex-col md:flex-row-reverse items-center gap-8 max-w-6xl mx-auto px-4">
+        <div className="card flex flex-col md:flex-row-reverse items-center gap-8 max-w-6xl mx-auto p-6">
           <div className="flex-1">
             <Image
               src="/IMG8.jpg"
@@ -190,10 +198,10 @@ export default function Home() {
         </div>
 
         {/* Construction & Renovation */}
-        <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto px-4 pb-20">
+        <div className="card flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto p-6 mb-4">
           <div className="flex-1">
             <Image
-              src="/carp-3.jpg"
+              src="/IMG5.JPG"
               alt="Construction and renovation"
               width={600}
               height={400}
@@ -214,7 +222,7 @@ export default function Home() {
         </div>
       </section>
       {/* Why Choose Us */}
-      <section className="bg-background py-20 px-4 border-t border-foreground/10">
+      <section className="bg-background py-18 px-4 border-t border-foreground/10">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold text-heading mb-6">
             Over 25 Years of Experience
@@ -250,13 +258,33 @@ export default function Home() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="bg-accent-dark text-background py-8 mt-16 text-center">
+      <footer className="bg-accent-dark text-background py-8 text-center">
         <p className="font-medium">
           © {new Date().getFullYear()} JB Shopfitting & Construction
         </p>
+
         <p className="text-background/80 text-sm mt-1">
           Delivering precision, quality, and craftsmanship across every project.
         </p>
+
+        <div className="mt-4 space-y-1 text-sm">
+          <p>
+            <span className="text-background/80">Phone:</span>{" "}
+            <a href="tel:+447700900123" className="font-medium hover:underline">
+              07899 957 096
+            </a>
+          </p>
+
+          <p>
+            <span className="text-background/80">Email:</span>{" "}
+            <a
+              href="mailto:hello@jbshopfitting.co.uk"
+              className="font-medium hover:underline"
+            ></a>
+          </p>
+
+          <p className="text-background/70">Leicester & surrounding areas</p>
+        </div>
       </footer>
     </main>
   );

@@ -21,13 +21,11 @@ export default function ContactPage() {
     setStatus("idle");
 
     try {
-      // For now, just log the form data
       console.log("Form submitted:", formData);
-
-      // In a real site, you’d send this to an API route or service like Formspree, Resend, or Nodemailer.
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
+      console.error("Error submitting form:", error);
       setStatus("error");
     }
   };
@@ -35,11 +33,23 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background text-foreground flex items-center justify-center px-4 py-20">
       <section className="max-w-lg w-full bg-card-bg rounded-2xl shadow-lg p-8 border border-foreground/10">
-        <h1 className="text-3xl font-bold text-accent text-center mb-6">
+        <h1 className="text-3xl font-bold text-accent text-center mb-4">
           Get in Touch
         </h1>
+
+        <p className="text-center text-muted mb-2">Prefer to talk?</p>
+        <p className="text-center mb-6">
+          Tel:{" "}
+          <a
+            href="tel:+447700900123"
+            className="text-lg font-semibold text-accent hover:text-accent-dark transition"
+          >
+            07899 957 096
+          </a>
+        </p>
+
         <p className="text-center text-muted mb-8">
-          Fill out the form below and we’ll get back to you shortly.
+          Or fill out the form below and we’ll get back to you shortly.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">

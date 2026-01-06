@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JB Shopfitting",
+  title: "JB Shopfitting & Construction",
   description:
     "Professional shopfitting services delivering high-quality bespoke interiors, displays, and commercial installations across Leicester.",
 };

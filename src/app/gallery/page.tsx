@@ -16,6 +16,10 @@ const images = [
   "/IMG9.jpeg",
   "/IMG10.jpeg",
   "/IMG11.Jpeg",
+  "/IMG12.PNG",
+  "/IMG13.PNG",
+  "/IMG14.PNG",
+  "/IMG15.PNG",
 ];
 
 export default function GalleryPage() {
@@ -44,12 +48,12 @@ export default function GalleryPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70" />
         <div className="relative z-10 px-6 max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold text-background mb-4">
-            Our Craftsmanship in Focus
+            Our Work in Focus
           </h1>
           <p className="text-background/90 text-lg leading-relaxed">
-            Every project is built with precision, pride, and attention to
-            detail — reflecting the professionalism and quality Jay Brown
-            Carpentry is known for.
+            From office fit outs and commercial renovations to bespoke joinery
+            and interior transformations — every project is delivered with
+            precision, efficiency, and a finish built to last.
           </p>
         </div>
       </section>
@@ -57,13 +61,14 @@ export default function GalleryPage() {
       {/* Introduction */}
       <section className="max-w-4xl mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl font-semibold text-accent-dark mb-6">
-          A Showcase of Quality Workmanship
+          Commercial Fit Outs, Joinery & Renovations
         </h2>
         <p className="text-muted leading-relaxed text-lg">
-          From bespoke interiors and fitted wardrobes to kitchen installations
-          and handcrafted furniture, our work combines timeless craftsmanship
-          with a modern aesthetic. Each image below represents the care,
-          precision, and skill that go into every project we complete.
+          Explore a selection of recent projects including office fit outs,
+          shopfitting, bespoke joinery, commercial installations, and specialist
+          renovation works. Each image reflects the care, planning, and
+          attention to detail we bring — using modern materials and proven
+          methods to deliver professional results.
         </p>
       </section>
 
